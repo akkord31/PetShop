@@ -10,7 +10,7 @@ namespace PetShop.Data
 
         }
 
-        public DbSet<Category> Category { get; set; }  //table in DB
-
+        public DbSet<Category> Category { get; set; }  //tables in DB
+        public DbSet<Pet> Pet { get; set; }
     }
 }

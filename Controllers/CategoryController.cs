@@ -18,8 +18,15 @@ namespace PetShop.Controllers
 
         //GET - Create
         public IActionResult Create() {
-
             return View();
+        }
+        //POST - Create
+        [HttpPost]
+        [ValidateAntiForgeryToken] //токен защиты от взлома и в post происходит проверка, что токен действителен
+        public IActionResult Create(Category obj) {
+            _db.Category.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
